@@ -1,0 +1,58 @@
+===== K-WAY MERGE USING MIN HEAP =====
+
+L1: 10 30 50 70 
+L2: 20 40 60 80 
+L3: 15 35 55 75 
+
+--- Building initial heap ---
+Insert 10 from L1 -> Heap = [10(L1)]  size = 1
+Insert 20 from L2 -> Heap = [10(L1), 20(L2)]  size = 2
+Insert 15 from L3 -> Heap = [10(L1), 20(L2), 15(L3)]  size = 3
+
+--- Merging ---
+
+Extract min 10 (from L1) -> Heap = [15(L3), 20(L2)]  size = 2
+Insert 30 from L1   -> Heap = [15(L3), 20(L2), 30(L1)]  size = 3
+
+Extract min 15 (from L3) -> Heap = [20(L2), 30(L1)]  size = 2
+Insert 35 from L3   -> Heap = [20(L2), 30(L1), 35(L3)]  size = 3
+
+Extract min 20 (from L2) -> Heap = [30(L1), 35(L3)]  size = 2
+Insert 40 from L2   -> Heap = [30(L1), 35(L3), 40(L2)]  size = 3
+
+Extract min 30 (from L1) -> Heap = [35(L3), 40(L2)]  size = 2
+Insert 50 from L1   -> Heap = [35(L3), 40(L2), 50(L1)]  size = 3
+
+Extract min 35 (from L3) -> Heap = [40(L2), 50(L1)]  size = 2
+Insert 55 from L3   -> Heap = [40(L2), 50(L1), 55(L3)]  size = 3
+
+Extract min 40 (from L2) -> Heap = [50(L1), 55(L3)]  size = 2
+Insert 60 from L2   -> Heap = [50(L1), 55(L3), 60(L2)]  size = 3
+
+Extract min 50 (from L1) -> Heap = [55(L3), 60(L2)]  size = 2
+Insert 70 from L1   -> Heap = [55(L3), 60(L2), 70(L1)]  size = 3
+
+Extract min 55 (from L3) -> Heap = [60(L2), 70(L1)]  size = 2
+Insert 75 from L3   -> Heap = [60(L2), 70(L1), 75(L3)]  size = 3
+
+Extract min 60 (from L2) -> Heap = [70(L1), 75(L3)]  size = 2
+Insert 80 from L2   -> Heap = [70(L1), 75(L3), 80(L2)]  size = 3
+
+Extract min 70 (from L1) -> Heap = [75(L3), 80(L2)]  size = 2
+L1 is finished, nothing to insert
+
+Extract min 75 (from L3) -> Heap = [80(L2)]  size = 1
+L3 is finished, nothing to insert
+
+Extract min 80 (from L2) -> Heap = []  size = 0
+L2 is finished, nothing to insert
+
+--- Final Result ---
+Merged list: 10 15 20 30 35 40 50 55 60 70 75 80 
+
+--- Operation Counts ---
+Comparisons       : 21
+Heap insertions   : 12
+Heap extractions  : 12
+Maximum heap size : 3
+Major operations (comparisons + insertions + extractions) : 45

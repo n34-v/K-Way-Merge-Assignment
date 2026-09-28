@@ -1,0 +1,41 @@
+===== PAIRWISE MERGE =====
+
+L1: 10 30 50 70 
+L2: 20 40 60 80 
+L3: 15 35 55 75 
+
+--- Step 1: L1 + L2 ---
+  Compare 10 and 20 -> take 10
+  Compare 30 and 20 -> take 20
+  Compare 30 and 40 -> take 30
+  Compare 50 and 40 -> take 40
+  Compare 50 and 60 -> take 50
+  Compare 70 and 60 -> take 60
+  Compare 70 and 80 -> take 70
+Intermediate result: 10 20 30 40 50 60 70 80 
+Comparisons in step 1: 7
+
+--- Step 2: (L1+L2) + L3 ---
+  Compare 10 and 15 -> take 10
+  Compare 20 and 15 -> take 15
+  Compare 20 and 35 -> take 20
+  Compare 30 and 35 -> take 30
+  Compare 40 and 35 -> take 35
+  Compare 40 and 55 -> take 40
+  Compare 50 and 55 -> take 50
+  Compare 60 and 55 -> take 55
+  Compare 60 and 75 -> take 60
+  Compare 70 and 75 -> take 70
+  Compare 80 and 75 -> take 75
+Comparisons in step 2: 11
+
+--- Final Result ---
+Merged list: 10 15 20 30 35 40 50 55 60 70 75 80 
+
+--- Operation Counts ---
+Comparisons (step 1)  : 7
+Comparisons (step 2)  : 11
+Total comparisons     : 18
+Element copies        : 20 (step 1 = 8, step 2 = 12)
+Major operations (comparisons + copies) : 38
+Largest temporary array : 8 elements
